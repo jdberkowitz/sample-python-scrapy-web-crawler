@@ -28,3 +28,6 @@ scrapy crawl products -o product_file.csv -t csv
 ```
 And now we have a nice spreadsheet of images, files and descriptions to update our online catalog with when the vendor is no help!
 
+A sample csv of the results from all products on their website is located in the nsl project folder for reference. 
+
+need help trying to scrape data for your online store? Scripts like these can help, and feel free to ask me if you need additional help!
