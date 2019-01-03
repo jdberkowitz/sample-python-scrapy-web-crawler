@@ -9,17 +9,22 @@ First you will want to install scrapy. If you are on windows the easiest way is 
 https://docs.anaconda.com/anaconda/install/windows/
 
 This can be done witht he following commands when Anaconda is installed
-## conda install -c conda-forge scrapy
+```
+conda install -c conda-forge scrapy
+```
 
 Once you setup the project you can simple add the product_data.py file to your spiders folder
 
 Open the terminal from Anaconda and cd into your project directory. The spiders directory should be one level down.
 
 Below command will crawl the pages in the start_urls and display the results
-## scrapy crawl products   
+```
+scrapy crawl products   
+```
 
 Below command will output the data to a csv product_file.csv in your project folder
-## scrapy crawl products -o product_file.csv -t csv
-
+```
+scrapy crawl products -o product_file.csv -t csv
+```
 And now we have a nice spreadsheet of images, files and descriptions to update our online catalog with when the vendor is no help!
 
