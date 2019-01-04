@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+            <link rel="icon" href="/nslusa.ico">
+            <title>NSL USA</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+        <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            let minHeight = () => {
+                let headers = document.getElementsByClassName("header");
+                let totalHeight = 0;
+                for (let i = 0; i < headers.length; i++) {
+                    totalHeight += headers[i].offsetHeight;
+
+                    let style = getComputedStyle(headers[i]);
+                    totalHeight += parseInt(style.marginTop) + parseInt(style.marginBottom);
+                }
+
+                document.getElementsByClassName("content-body")[0].style.minHeight = "calc(100vh - " + (totalHeight + 10).toString() + "px)";
+            };
+            window.onresize = minHeight;
+            window.onload = minHeight;
+        </script>
+        <style>
+            h5 {
+                font-size: 1.2rem;
+                color: #04A7F6;
+                width: 100%;
+                display: inline-block;
+                text-align: center;
+            }
+
+            .blue {
+                color: #04A7F6;
+            }
+
+            .grey {
+                color: #4d4a40;
+            }
+
+            .link {
+                color: #212529;
+            }
+
+            body {
+                background-color: #268c94;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header d-flex flex-wrap d-lg-none align-items-center justify-content-center pb-2">
+            <div class="w-100 mx-3" style="max-width: 250px;">
+                <a class="d-block" href="/" style="background-image: url('/images/nslusa_logo.png'); width: 100%; padding-bottom: 30%; background-repeat: no-repeat; background-position: center center; background-size: contain;">
+                </a>
+            </div>
+            <div class="mt-1 mx-3 text-center" style="font-weight: 600;">
+                <span style="font-style: italic;">INNOVATIVE LIGHTING SOLUTIONS</span>
+                <br />
+                <a class="link" href="mailto:nslsales@nslusa.com">nslsales@nslusa.com</a>
+                <br />
+                <a class="link" href="tel:303 926 1100">303 926 1100</a>
+                <a class="link" href="//facebook.com/National-Specialty-Lighting-1008064632652340">
+                    <i class="fab fa-facebook fa-fw fa-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="header pb-2">
+            <div class="d-flex mx-auto" style="max-width: 1200px;">
+                <a class="d-none d-lg-inline navbar-brand pl-2 mt-lg-2" style="flex: 0 0 auto;" href="/">
+                    <img class="mt-2" src="/images/nslusa_logo.png" width="330" height="100" alt="">
+                </a>
+                <div class="d-flex flex-wrap align-items-start" style="flex-grow: 1;">
+                    <div class="d-none d-lg-flex flex-wrap align-items-top w-100 mr-1">
+                        <div class="ml-auto form-inline pt-1 pb-2 px-2" style="background: #A0A0A0; border-radius: 0px 0px 5px 5px; font-size: 0.8em;">
+                            <label style="color:#212529; font-style: italic;">Sign up for news and events:</label>&nbsp;
+                            <form method="post" action="/subscribe">
+                                <input class="form-control form-control-sm" name="email" style="line-height: 1;" placeholder="Email Address">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="mr-auto d-none d-lg-flex w-100" style="align-items: center;">
+                        <div>
+                            <div>
+                                    <div class="ml-1" style="letter-spacing: 0.15em; font-weight: 800; font-style: italic;">
+                                        INNOVATIVE LIGHTING SOLUTIONS
+                                    </div>
+                            </div>
+                            <div class="d-flex ml-1">
+                                <a class="d-block link" href="tel:303 926 1100">303 926 1100</a>
+                                <span class="d-block">&nbsp;|&nbsp;</span>
+                                <a class="d-block link" href="mailto:nslsales@nslusa.com">nslsales@nslusa.com</a>
+                                <span class="d-block">&nbsp;|&nbsp;</span>
+                                <a class="d-block link" href="//facebook.com/National-Specialty-Lighting-1008064632652340">
+                                    <i class="fab fa-facebook fa-fw fa-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <form class="ml-auto mr-4" action="/products">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="search" name="filter" class="form-control" placeholder="Search Products" aria-label="Search">
+                            </div>
+                        </form>
+                    </div>
+
+                    <nav class="navbar navbar-light navbar-expand-lg w-100 p-0 px-2 px-lg-0">
+                        <form class="d-lg-none" style="width: calc(100% - 65px);" action="/products">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="search" name="filter" class="form-control" placeholder="Search Products" aria-label="Search">
+                            </div>
+                        </form>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="navbar-nav flex-wrap ml-2 ml-lg-0">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/products">Products</a>
+                                </li>
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarResources" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Resources
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarResources">
+                                        <a class="dropdown-item" href="//b2bcreditchex.com/nationalspecialtylighting">Credit Application</a>
+                                        <a class="dropdown-item" href="/products/displays/merchandising">Merchandising Displays</a>
+                                        <a class="dropdown-item" href="/products/displays/pop">Sales Maker POP</a>
+                                            <a class="dropdown-item" href="/didyouknow">Did You Know?</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/gallery">Gallery</a>
+                                </li>
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarWheretobuy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Where to Buy
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarWheretobuy">
+                                        <a class="dropdown-item" href="/distributors/salesreps">Sales Reps</a>
+                                        <a class="dropdown-item" href="/distributors/online">Online</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/careers">Careers</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="pb-2 content-body" style="background-color: #fefefe; min-height: calc(100vh - 460px);">
+            <div class="mx-auto p-2" style="max-width: 1200px;">
+                
+<style>
+    .product-image {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        max-width: 100%;
+        height: 100px;
+        border: 1px;
+    }
+    .tab-content a.btn {
+        color: #fff;
+    }
+
+    // Small
+    @media (max-width: 575px) {
+        .w-xs-100 {
+            width: 100%;
+        }
+    }
+
+    .gallery-image {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        width: 100%;
+        height: 160px;
+        padding: 2px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .image-caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    .modal-content, .image-caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    .close {
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover, .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<h5 style="page-title">LED Tape Light</h5>
+
+<div class="d-flex flex-wrap flex-md-nowrap">
+    <div class="mx-auto">
+        <img src="/upload/636644980478175233.png" style="min-width: 100px; min-height: 100px; max-width: 250px; max-height:500px;">
+    </div>
+    <div class="mx-3 w-xs-100 mt-3 mt-md-0">
+        <p>LEDs mounted to Flexible Printed Circuit Board with 4.3 watts per foot brightness. Minimal fixture profile of just 2.0mm (3/32") high by 10mm (12/32') wide. Can be field cut and reconnected every 4". Safe, Class 2 LED Drivers power up to 20 feet of product in a single run. Dimmable. Easy mounting with 3M tape pre-applied to back of fixture. Offered in six LED colors and RGB colour change for dramatic effects! Our extrusions are ideal for recessed or in cabinet applications.<br /><br />Specifications:<br />                                          High Power                             Low Power<br />Power Consumption          4.3 Watts per foot                   2.2 Watts per foot<br />Lumen Output                   325 Lumens per foot - CW     165 Lumens per foot - CW<br />                                          300 Lumens per foot - NW     150 Lumens per foot - NW<br />                                          285 Lumens per foot - WW     145 Lumens per foot - WW<br />Lumen Laintenance          50,000 Hours                           50,000 Hours<br />CRI                                    &gt;80                                          &gt;80<br /><br />*CW = Cool White, NW= Neutral White, WW = Warm White</p>
+        <p>
+                <a href="/upload/636748184457297202.pdf/LED%20Tape%20Light%20Brochure" target="_blank">Download Product Brochure</a>
+                <br />
+                <br />
+            <a href="/flipbooks/nslusa/index.html" target="_blank">View NSL Product Catalogue</a>
+            <br />
+            <a href="/nsl_catalog.pdf" target="_blank">Download Full Catalog PDF</a>
+        </p>
+    </div>
+</div>
+
+<div class="mt-3 nav nav-tabs" id="product" role="tablist">
+    <a class="nav-item nav-link active link" id="product-images-tab" data-toggle="tab" href="#product-images" role="tab" aria-controls="product-images" aria-selected="true">Images</a>
+    <a class="nav-item nav-link link" id="product-photometrics-tab" data-toggle="tab" href="#product-photometrics" role="tab" aria-controls="product-photometrics" aria-selected="false">Photometrics</a>
+    <a class="nav-item nav-link link" id="product-drawings-tab" data-toggle="tab" href="#product-drawings" role="tab" aria-controls="product-drawings" aria-selected="false">Drawings</a>
+    <a class="nav-item nav-link link" id="product-accessories-tab" data-toggle="tab" href="#product-accessories" role="tab" aria-controls="product-accessories" aria-selected="false">Accessories</a>
+    <a class="nav-item nav-link link" id="product-instructions-tab" data-toggle="tab" href="#product-instructions" role="tab" aria-controls="product-instructions" aria-selected="false">Instructions</a>
+    <a class="nav-item nav-link link" id="product-applications-tab" data-toggle="tab" href="#product-applications" role="tab" aria-controls="product-applications" aria-selected="false">Applications</a>
+    <a class="nav-item nav-link link" id="product-moreinfo-tab" data-toggle="tab" href="#product-moreinfo" role="tab" aria-controls="product-moreinfo" aria-selected="false">More Info</a>
+</div>
+
+<div class="tab-content mt-2 mx-2" id="productContent">
+    <div class="tab-pane fade show active" id="product-images" role="tabpanel" aria-labelledby="product-images-tab">
+            <div class="row">
+                    <div class="col-12 mb-2 col-sm-6 mb-sm-4 col-md-4 col-lg-3 product-image" style="background-image: url('/upload/636580515230647088.jpg');">
+                        <a onclick="clickImage('/upload/636580515230647088.jpg', '')" href="#/upload/636580515230647088.jpg" class="d-block w-100 h-100">
+                        </a>
+                    </div>
+                    <div class="col-12 mb-2 col-sm-6 mb-sm-4 col-md-4 col-lg-3 product-image" style="background-image: url('/upload/636580515255001149.jpg');">
+                        <a onclick="clickImage('/upload/636580515255001149.jpg', '')" href="#/upload/636580515255001149.jpg" class="d-block w-100 h-100">
+                        </a>
+                    </div>
+                    <div class="col-12 mb-2 col-sm-6 mb-sm-4 col-md-4 col-lg-3 product-image" style="background-image: url('/upload/636580515276055605.jpg');">
+                        <a onclick="clickImage('/upload/636580515276055605.jpg', '')" href="#/upload/636580515276055605.jpg" class="d-block w-100 h-100">
+                        </a>
+                    </div>
+                    <div class="col-12 mb-2 col-sm-6 mb-sm-4 col-md-4 col-lg-3 product-image" style="background-image: url('/upload/636580515296982089.jpg');">
+                        <a onclick="clickImage('/upload/636580515296982089.jpg', '')" href="#/upload/636580515296982089.jpg" class="d-block w-100 h-100">
+                        </a>
+                    </div>
+            </div>
+    </div>
+    <div class="tab-pane fade" id="product-photometrics" role="tabpanel" aria-labelledby="product-photometrics-tab">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        INDOOR HIGH POWER COOL WHITE
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        6000K
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580515681605772.IES/INDOOR%20HIGH%20POWER%20COOL%20WHITE.ies" role="button" class="btn btn-secondary btn-sm" target="_blank">Download .ies File</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        INDOOR HIGH POWER WARM WHITE
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        3000K
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580515863502610.IES/INDOOR%20HIGH%20POWER%20WARM%20WHITE.ies" role="button" class="btn btn-secondary btn-sm" target="_blank">Download .ies File</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+    </div>
+    <div class="tab-pane fade" id="product-drawings" role="tabpanel" aria-labelledby="product-drawings-tab">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-010-S
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        CLEAR U CHANNEL TRACK
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580518675812312.pdf/LTP-010-S" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-OD-XX-RGB
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        HIGH POWER LED TAPE LIGHT OUTDOOR RGB
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580517185997787.pdf/LTP-OD-XX-RGB" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-XX-CW
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        HIGH POWER LED TAPE LIGHT INDOOR COOL WHITE
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580516131837279.pdf/LTP-XX-CW" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-XX-CW-LP
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        LOW POWER LED TAPE LIGHT INDOOR WARM WHITE
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580516543527645.pdf/LTP-XX-CW-LP" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-XX-RGB
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        HIGH POWER LED TAPE LIGHT INDOOR RGB
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580516968703947.pdf/LTP-XX-RGB" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-XX-WW
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        HIGH POWER LED TAPE LIGHT INDOOR WARM WHITE
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580516350630935.pdf/LTP-XX-WW" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LTP-XX-WW-LP
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        LOW POWER LED TAPE LIGHT INDOOR WARM WHITE
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580516727676283.pdf/LTP-XX-WW-LP" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LV-LB-D3-FR
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        SURFACE MOUNTED ALUMINUM EXTRUSION
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580517402288108.pdf/LV-LB-D3-FR" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LV-LB-V3-FR
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        CORNER SURFACE MOUNTED ALUMINUN EXTRUSION
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580518176889272.pdf/LV-LB-V3-FR" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        LV-LB-W3-FR
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        RECESSED ALUMINUM EXTRUSION
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580518441689289.pdf/LV-LB-W3-FR" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+    </div>
+    <div class="tab-pane fade" id="product-accessories" role="tabpanel" aria-labelledby="product-accessories-tab">
+            <div class="row">
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644980708633336.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-001-6R / LTP-001-12R</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            POWER CONNECTOR AVAILABLE IN 6FT, 12FT
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636580519991799031.jpg');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-002</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            IN-LINE SINGLE COLOR CONNECTOR
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644981130226546.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-001-RGB-6R</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            RGB POWER FEED CONNECTOR INDOOR
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644981423320771.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-001-6R-CM</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            RGB POWER FEED THROUGH-WALL CONNECTOR
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636580520954902144.jpg');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-002-RGB</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            IN-LINE CONNECTOR FOR RGB INDOOR
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644982324442272.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-STP-2IN / LTP-STP-6IN / LTP-STP-2 / LTP-STP-12</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            STEP CORD AVAILABLE IN 2&quot;, 6&quot;, 2FT, 12FT
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644981837318234.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-001-RGB</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            CONNECTOR RGB INDOOR 6&quot;, 12&quot;
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644982931977740.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-001-OD-6FT</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            OUTDOOR CONNECTOR SINGLE COLOR
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644983296214530.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-RGB-001-OD-6FT</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            RGB POWER FEED OUTDOOR CONNECTOR
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644983410518668.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-FS-MC-004</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            MOUNTING CLIPS
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644983552142270.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-FS-EC-001</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            END CAP
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644983857311142.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LMSII-001</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            TERMINAL BLOCK WITH JUNCTION BOX
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644984332404047.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LTP-010-S</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            4 FT PLASTIC MOUNTING CHANNEL
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644984671441734.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-LB-W3-FR</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            RECESSED ALUMINUM CHANNEL TRACK
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644984866981886.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-LB-D3-FR</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            SURFACE MOUNT ALUMINUM TRACK 1 METER
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636644985008308835.png');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-LB-V3-FR</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            WEDGE ALUMINUM TRACK
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636580524331597167.jpg');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LT-09S-RF</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            3 CHANNEL CONTROLLER RGB TAPELIGHT
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636580524615455253.jpg');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LT-390A</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            SIGNAL AMPLIFIER FOR LED TAPE
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636580524829162523.jpg');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-ZJFFS-3CH-6INW</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            OUTDOOR RGB AMPLIFIER
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 col-sm-6 col-md-4 col-lg-3">
+                        <div style="height: 150px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('/upload/636580525395688383.jpg');">
+                        </div>
+                        <div class="text-center">
+                            <span style="font-weight: 600;">LV-RF103</span>
+                        </div>
+                        <div class="text-center" style="line-height: 1.2;">
+                            WIRELESS RF MINI RGB CONTROLLER
+                        </div>
+                    </div>
+            </div>
+    </div>
+    <div class="tab-pane fade" id="product-instructions" role="tabpanel" aria-labelledby="product-instructions-tab">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        Install Instructions - Indoor
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580519160820586.pdf/Install%20Instructions%20-%20Indoor" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        Install Instructions - Outdoor
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="/upload/636580519325602167.pdf/Install%20Instructions%20-%20Outdoor" role="button" class="btn btn-secondary btn-sm" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+                <hr class="py-0 my-0">
+    </div>
+    <div class="tab-pane fade" id="product-applications" role="tabpanel" aria-labelledby="product-applications-tab">
+            <span>This product is suitable for the following applications:</span>
+            <ul>
+                    <li>Aisle Lighting</li>
+                    <li>Back Lighting</li>
+                    <li>Cabinet Lighting</li>
+                    <li>Cove Lighting</li>
+                    <li>Effect Lighting</li>
+                    <li>Linear Decorative Lighting</li>
+                    <li>Museum Lighting</li>
+                    <li>Retail Stores</li>
+                    <li>Security Lighting</li>
+                    <li>Showcase Lighting</li>
+            </ul>
+    </div>
+    <div class="tab-pane fade" id="product-moreinfo" role="tabpanel" aria-labelledby="product-moreinfo-tab">
+        <p>
+            Do you have a question about this product? <a href="mailto:nslsales@nslusa.com?Subject=LED Tape Light%20Question">Send us an email</a> and we'll get back to you as soon as possible!
+        </p>
+    </div>
+</div>
+
+<div id="gallery-modal" class="modal fade">
+    <a href="#"><span id="modal-close" class="close">&times;</span></a>
+    <img id="modal-image" class="modal-content">
+    <div id="modal-caption" class="image-caption">What up dawg?</div>
+</div>
+
+<script type="application/javascript">
+    function clickImage(image, caption)
+    {
+        var modal = document.getElementById('gallery-modal');
+        var img = document.getElementById('modal-image');
+        var captionText = document.getElementById("modal-caption");
+        var close = document.getElementById("modal-close");
+        modal.classList.add('show');
+        img.src = image;
+        captionText.innerHTML = caption;
+        modal.style.display = "block";
+        close.onclick = function () {
+            modal.style.display = "none";
+            modal.classList.remove('show');
+        }
+    }
+</script>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="mx-auto pt-2 pb-3 text-center" style="max-width: 1200px; font-size: 0.8rem;">
+                <div class="row mx-0" style="font-weight: bold;">
+                    <div class="col-6 col-sm-3">
+                        <a class="mx-auto link" href="/privacy">Privacy Policy</a>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <a class="mx-auto link" href="/warranty">Product Warranty</a>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <a class="link" href="mailto:nslsales@nslusa.com">Email Us</a>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <a class="link" href="tel:1 800 527 2923">1 800 527 2923</a>
+                    </div>
+                    <div class="col-12 mt-1">
+                        <a class="mx-auto link" href="//facebook.com/National-Specialty-Lighting-1008064632652340">
+                            <i class="fab fa-facebook fa-fw fa-2x"></i>
+                        </a>
+                    </div>
+                    <div class="col-12 text-center">
+                        <a class="link" href="/flipbooks/nslusa/index.html" target="_blank">NSL Product Catalogue</a>
+                    </div>
+                </div>
+
+                <div>
+                    2299 Kenmore Avenue, Tonawanda, New York, United States, 14207
+                </div>
+
+                <div class="mt-1">
+                    Copyright<sup>&copy;</sup> National Specialty Lighting
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
