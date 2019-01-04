@@ -9,8 +9,8 @@ class QuotesSpider(scrapy.Spider):
     #
     # (or even spookier ... in the past) then you may want to reference the wayback machine archive to see the page markup correctly
     start_urls = [
-        'https://www.nslusa.com/products/43/',
-        'https://www.nslusa.com/products/41/',
+        '../product-41.html', # Pages contained in the root of the project are from https://www.nslusa.com/products/41/
+        '../product-43.html', # Replcae these with relative links to the files or use the live url of your target
     ]
     
     # Our parse function will crawl the pages of the start_urls and return a response that is handled in the body of the function
