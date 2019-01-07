@@ -1,6 +1,6 @@
 import scrapy
 
-class ProductssSpider(scrapy.Spider):
+class ProductsSpider(scrapy.Spider):
     # We name our spider with the name variable, this is what we reference on the cmd line to run our crawl
     name = "products"
     # Here we can add a list of URLs to crawl. 
@@ -15,7 +15,7 @@ class ProductssSpider(scrapy.Spider):
     
     # Our parse function will crawl the pages of the start_urls and return a response that is handled in the body of the function
     def parse(self, response):        
-            for product in response.css('div.content-body'):  
+            for product in response.css('div.content-body'):                
                 ##Setup the base url for the image and file paths
                 base_url = "https://www.nslusa.com"             
                 ##Grab a list of the image urls 
