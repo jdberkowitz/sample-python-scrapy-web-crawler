@@ -1,6 +1,6 @@
 import scrapy
 
-class QuotesSpider(scrapy.Spider):
+class ProductssSpider(scrapy.Spider):
     # We name our spider with the name variable, this is what we reference on the cmd line to run our crawl
     name = "products"
     # Here we can add a list of URLs to crawl. 
